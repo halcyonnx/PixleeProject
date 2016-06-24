@@ -1,0 +1,24 @@
+{
+  "name": "PixleeProject",
+  "version": "1.0.0",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "description": "",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2",
+    "grunt-webpack": "^1.0.11",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
