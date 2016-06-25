@@ -1,7 +1,7 @@
-var express = require('express');
+// var express = require('express');
 var morgan = require('morgan');
 
-module.exports = function(app) {
+module.exports = function(app, express) {
 
   var collectionRouter = express.Router();
 
@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   app.use(express.static(__dirname + '/../../build'));
 
-  app.use('/api/collections', collectionRouter);
+  app.use('/collections', collectionRouter);
 
   require('../collections/collectionRoutes.js')(collectionRouter);
 

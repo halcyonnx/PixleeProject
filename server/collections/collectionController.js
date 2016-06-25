@@ -10,6 +10,12 @@ var getCollection = function(req, res, next) {
   var startTime = req.query.start_time;
   var endTime = req.query.end_time;
   
+  findCollection(tagName, parseInt(startTime, 10), parseInt(endTime, 10))
+  .then(function(collection) {
+    console.log(collection.length);
+    res.json(collection);
+  });
+
 };
 
 var saveCollection = function(req, res, next) {
@@ -79,7 +85,7 @@ var findCollection = function(tagName, startTime, endTime) {
 
         collection = collection.concat(coll);
         console.log("Collection Size:", collection.length);
-        return collection.concat
+        return collection
       });
       // console.log(collection);
       // return collection;
@@ -199,7 +205,7 @@ var doesContainTime = function(time, data) {
   while (createdTime <= 0 && l >= 0) {
     if (data[l].comments.count === 0) {
       createdTime = parseInt(data[l].created_time,10) * 1000;
-      console.log("Selected time is", createdTime, data[l]);
+      // console.log("Selected time is", createdTime, data[l]);
     }
     else {
       l--;

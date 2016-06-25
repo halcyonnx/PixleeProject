@@ -1,3 +1,12 @@
 <div>
   <div>{{test}}</div>
+
+  <form name="searchForm" ng-submit='submit()'>
+    <input type='text' name="username" ng-model='search.tagName'>
+    <input type='date' name="startDate" ng-model='search.startDate'>
+    <input type='time' name="startTime" ng-model='search.startTime'>
+    <input type='date' name="endDate" ng-model='search.endDate'>
+    <input type='time' name="endTime" ng-model='search.endTime'>
+    <button>Search</button>
+  </form>
 </div>

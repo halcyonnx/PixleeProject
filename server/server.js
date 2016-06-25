@@ -4,7 +4,7 @@ var middleware = require('./config/middleware.js');
 var port = process.env.PORT || 8080;
 var app = express();
 
-middleware(app);
+middleware(app, express);
 
 app.listen(port);
 console.log("Server now listening on port " + port);
