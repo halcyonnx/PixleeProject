@@ -7,7 +7,7 @@
   "description": "",
   "dependencies": {
     "angular": "^1.5.7",
-    "angular-route": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
     "express": "^4.14.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",

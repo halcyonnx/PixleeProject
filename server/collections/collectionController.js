@@ -241,7 +241,7 @@ var doesContainTime = function(time, data) {
   }
 }
 
-findCollection("Unicorn", Date.parse("6/24/2016 10:00:00"), Date.parse("6/24/2016 14:00:00"));
+// findCollection("Unicorn", Date.parse("6/24/2016 10:00:00"), Date.parse("6/24/2016 14:00:00"));
 
 module.exports = {
   getCollection: getCollection,

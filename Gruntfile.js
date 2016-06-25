@@ -3,6 +3,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    webpack: {
+      app: {
+        entry: './app/app.js',
+        output: {
+          path: __dirname + '/build',
+          filename: 'production.js'
+        }
+      }
+    },
+
     nodemon: {
       dev: {
         script: 'server/server.js',
@@ -18,6 +28,7 @@ module.exports = function(grunt) {
       js: ['./build/*.js'],
       css: ['./build/*.css'],
       index: ['./build/*.html'],
+      templates: ['./build/html/*.html'],
     },
 
     copy: {
@@ -26,9 +37,27 @@ module.exports = function(grunt) {
           {expand: true, flatten: true, src: './app/index.html', dest: './build/'}
         ]
       },
+      templates: {
+        files: [
+          {expand: true, flatten: true, src: './app/*/*.html', dest: './build/html/'}
+        ]
+      },
     },
 
     watch: {
+      client: {
+        files: ['app/**/*.js'],
+        tasks: ['webpack:app']
+      },
+      index: {
+        files: ['app/index.html'],
+        tasks: ['copy:index']
+      },
+      templates: {
+        files: ['app/**/*.html', '!app/index.html'],
+        tasks: ['copy:templates']
+      }
+
     }
 
   });
@@ -60,6 +89,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', function(n) {
+    grunt.task.run(['webpack']);
     grunt.task.run(['copy']);
   });
 
